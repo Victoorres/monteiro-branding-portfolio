@@ -133,12 +133,12 @@ export function Stats() {
       if (currentStep >= steps) {
         clearInterval(interval);
         setAnimatedNumbers({
-          projects: 127,
-          clients: 89,
-          coffee: 4847,
-          hours: 12500,
-          awards: 156,
-          ideas: 2341,
+          projects: 4,
+          clients: 5,
+          coffee: 20,
+          hours: 500,
+          awards: 100,
+          ideas: 5,
         });
       }
     }, stepDuration);

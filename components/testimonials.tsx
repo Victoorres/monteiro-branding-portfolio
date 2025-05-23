@@ -55,11 +55,11 @@ export function Testimonials() {
  const marqueeWords = ["BRANDING", "DESIGN", "STRATEGY", "CREATIVITY", "IDENTITY", "INNOVATION", "PASSION", "VISION"]
 
   return (
-    <section className="py-20 md:py-32 bg-monteiro-yellow">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 ref={titleRef} className="font-godger text-4xl md:text-5xl lg:text-6xl text-monteiro-black reveal">
-            Client <span className="text-monteiro-purple">Testimonials</span>
+            Depoimentos dos meus <span className="font-godger text-monteiro-purple">clientes</span>
           </h2>
         </div>
 
@@ -74,23 +74,6 @@ export function Testimonials() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      <div ref={marqueeRef} className="mt-20 py-8 bg-monteiro-black text-monteiro-white overflow-hidden reveal">
-        <div className="marquee">
-          <div className="marquee-content">
-            {marqueeWords.map((word, index) => (
-              <span key={index} className="font-godger text-6xl md:text-8xl mx-8">
-                {word}
-              </span>
-            ))}
-            {marqueeWords.map((word, index) => (
-              <span key={`repeat-${index}`} className="font-godger text-6xl md:text-8xl mx-8">
-                {word}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

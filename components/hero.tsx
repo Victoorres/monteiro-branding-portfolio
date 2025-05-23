@@ -110,7 +110,7 @@ export function Hero() {
       <section id="home" className="relative min-h-screen flex items-center pt-10 overflow-hidden bg-monteiro-white">
         <div className="absolute top-0 right-0 w-1/2 h-screen bg-monteiro-purple/20 -z-10" />
 
-        <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center pb-[25vh] sm:pb-[45vh]">
+        <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center pb-[25vh] sm:pb-[49vh]">
           <div className="space-y-8">
             <h1 ref={titleRef} className="font-godger text-5xl md:text-7xl lg:text-8xl reveal text-monteiro-black">
               Marcas que <span className="font-godger text-monteiro-purple">colam </span>igual figurinha
