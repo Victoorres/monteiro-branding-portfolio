@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Godger";
+  src: url("/fonts/Godger-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/Helvetica.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 46 33% 96%;
+    --foreground: 0 0% 27%;
+
+    --card: 46 33% 96%;
+    --card-foreground: 0 0% 27%;
+
+    --popover: 46 33% 96%;
+    --popover-foreground: 0 0% 27%;
+
+    --primary: 282 100% 88%;
+    --primary-foreground: 0 0% 27%;
+
+    --secondary: 65 70% 77%;
+    --secondary-foreground: 0 0% 27%;
+
+    --muted: 46 33% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 65 70% 77%;
+    --accent-foreground: 0 0% 27%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 46 33% 96%;
+
+    --border: 0 0% 27%;
+    --input: 0 0% 27%;
+    --ring: 0 0% 27%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 27%;
+    --foreground: 46 33% 96%;
+
+    --card: 0 0% 27%;
+    --card-foreground: 46 33% 96%;
+
+    --popover: 0 0% 27%;
+    --popover-foreground: 46 33% 96%;
+
+    --primary: 282 100% 88%;
+    --primary-foreground: 0 0% 27%;
+
+    --secondary: 65 70% 77%;
+    --secondary-foreground: 0 0% 27%;
+
+    --muted: 0 0% 35%;
+    --muted-foreground: 46 33% 86%;
+
+    --accent: 65 70% 77%;
+    --accent-foreground: 0 0% 27%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 46 33% 96%;
+
+    --border: 46 33% 96%;
+    --input: 46 33% 96%;
+    --ring: 46 33% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Godger", sans-serif;
+  }
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea {
+    font-family: "Helvetica", sans-serif;
+  }
+}
+
+/* Update the cursor styles to use the correct colors */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e2bfff;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.cursor.expanded {
+  transform: translate(-50%, -50%) scale(4);
+  background-color: #e7eaa1;
+  mix-blend-mode: difference;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee animation styles */
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e2bfff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Floating animation for contact elements */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-delay-1 {
+  animation: float 6s ease-in-out 1s infinite;
+}
+
+.float-animation-delay-2 {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #e2bfff, #e7eaa1, #e2bfff);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradient-text 5s ease infinite;
+}
